@@ -17,6 +17,7 @@ export const Container = styled.section`
         justify-content: space-between;
         align-items: center;
         flex-direction: row;
+        padding: 8px 0;
     }
 
     nav a:not(:last-child){
