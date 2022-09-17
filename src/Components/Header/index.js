@@ -11,7 +11,7 @@ export default function Header() {
                         <Link to='/'>Home</Link>
                         <Link to='/profile'>Perfil</Link>
                         <Link to='/register'>Registrar</Link>
-                        <Link to='#'>Suporte</Link>
+                        <Link to='/suporte'>Suporte</Link>
                         <Link to='/signin'>
                             <span>Sair</span>
                         </Link>
