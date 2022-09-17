@@ -2,16 +2,13 @@ import styled from "styled-components";
 
 export const Container = styled.section`
     width: 100%;
-
     img{
         width: 100%;
         z-index: 9;
     }
-
     >.banner{
         position: relative;
     }
-
     .banner h1{
         font-size: 54px;
         display: flex;
