@@ -8,11 +8,11 @@ export default function Header() {
                 <header>
                     <img src={require('../../Imgs/Logo.png')} alt="Logo da empresa composto por uma nota de dolar escrito embaixo o nome da empresa FinanSystem" />
                     <nav>
-                        <Link to='#'>Home</Link>
+                        <Link to='/'>Home</Link>
                         <Link to='#'>Perfil</Link>
-                        <Link to='#'>Registrar</Link>
+                        <Link to='/register'>Registrar</Link>
                         <Link to='#'>Suporte</Link>
-                        <Link to='#'>
+                        <Link to='/signin'>
                             <span>Sair</span>
                         </Link>
                     </nav>

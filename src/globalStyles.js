@@ -8,7 +8,7 @@ export default createGlobalStyle`
 
     --dark-100: #000000;
     --dark-80: #171717;
-    --dark-60: #808080;
+    --dark-60: #707070;
     --dark-40: #C8C8C8;
 
     --light-100: #ffffff;
