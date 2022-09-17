@@ -3,14 +3,16 @@ import styled from "styled-components";
 export const Container = styled.section`
     width: 100%;
     img{
-        width: 100%;
+        height: 100%;
+        max-width: 100%;    
         z-index: 9;
     }
     >.banner{
         position: relative;
     }
     .banner h1{
-        font-size: 54px;
+        font-size: 45px;
+        font-weight: normal;
         display: flex;
         justify-content: center;
         align-items: center;
