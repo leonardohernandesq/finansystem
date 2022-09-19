@@ -3,8 +3,8 @@ import { createGlobalStyle } from "styled-components";
 export default createGlobalStyle`
   :root {
     --red: #B00000;
-    --green: #05C050;
-    --greenplus: #009229;
+    --green: #009229;
+    --greenplus: #017221;
 
     --dark-100: #000000;
     --dark-80: #171717;
@@ -14,18 +14,22 @@ export default createGlobalStyle`
     --light-100: #ffffff;
     --light-80: #EAEAEA;
     --light-60: #D9D9D9;
-    --light-60: #C9C9C9;
+    --light-40: #C9C9C9;
   }
 
   *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: var(--dark-80);
   }
 
-  body, input, textarea, button{
+  body{
+    background-color: var(--dark-80);
+    color: var(--light-100);
     font: 400 1rem 'Roboto', sans-serif;
+  }
+
+  input, textarea, button{
     color: var(--light-100);
   }
   
