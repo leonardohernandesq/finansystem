@@ -18,6 +18,7 @@ export const Container = styled.section`
         align-items: center;
         flex-direction: row;
         padding: 8px 0;
+        color: var(--light-100);
     }
 
     nav a:not(:last-child){
@@ -31,6 +32,7 @@ export const Container = styled.section`
 
     nav a span{
         border: 1px solid var(--light-100);
+        color: var(--light-100);
         padding: 8px 40px;
         border-radius: 50rem;
     }

@@ -18,6 +18,7 @@ export const Container = styled.section`
         align-items: center;
         background-color: transparent;
         position: absolute;
+        color: var(--light-100);
         bottom: 0;
         top: 0;
         right: 0;
