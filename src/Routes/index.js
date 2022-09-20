@@ -5,7 +5,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Header from '../Components/Header'
 import Home from "../Pages/Home";
 import SignIn from '../Pages/SignIn';
-import Register from '../Pages/Register';
+import Register from '../Pages/Register'
+import RegisterFinance from '../Pages/RegisterFinance';
 import Profile from '../Pages/Profile';
 import Suporte from '../Pages/Suporte';
 
@@ -16,6 +17,7 @@ export default function RoutesApp() {
             <Routes>
                 <Route path="/" element={<Home />} />
                 <Route path="/register" element={<Register />} />
+                <Route path="/registerfinance" element={<RegisterFinance />} />
                 <Route path="/signin" element={<SignIn />} />
                 <Route path="/profile" element={<Profile />} />
                 <Route path="/suporte" element={<Suporte />} />
