@@ -1,5 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/auth';
+
 import Input from '../../Components/Input';
 
 import Banner from '../../Components/Banner';
@@ -7,15 +9,19 @@ import Banner from '../../Components/Banner';
 import * as S from "./style";
 
 export default function SignIn() {
+    const { Logar, loadingAuth } = useContext(AuthContext)
+
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
-    const [loadingRegister, setLoadingRegister] = useState(false)
 
-    async function handleRegister(e) {
+    async function handleLogin(e) {
         e.preventDefault()
-        setLoadingRegister(true)
 
-        setTimeout(() => { setLoadingRegister(false) }, 700)
+        if (email !== '' && senha !== '') {
+            Logar(email, senha);
+        } else {
+            alert('Digite login e senha para logar!!!')
+        }
 
     }
 
@@ -25,7 +31,7 @@ export default function SignIn() {
                 <Banner imagem={require('../../Imgs/banner.jpg')} title={'Faça seu Login'} />
             </div>
             <S.Container>
-                <form onSubmit={handleRegister}>
+                <form onSubmit={handleLogin}>
 
                     <Input
                         value={email}
@@ -42,7 +48,7 @@ export default function SignIn() {
                     />
 
                     <button type='submit'>
-                        {loadingRegister ? 'Carregando...' : 'Acessar a Conta'}
+                        {loadingAuth ? 'Carregando...' : 'Acessar a Conta'}
                     </button>
 
                     <Link to='/register'>Ainda não tem uma conta? Registre-se</Link>

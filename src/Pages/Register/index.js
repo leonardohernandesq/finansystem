@@ -61,7 +61,7 @@ export default function Register() {
                         {loadingRegister ? 'Carregando...' : 'Registrar Conta'}
                     </button>
 
-                    <Link to='/signin'>Você já possui uma conta?</Link>
+                    <Link to='/'>Você já possui uma conta?</Link>
                 </form>
             </S.Container>
         </S.Wrapper>

@@ -1,10 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './style';
 
 import Banner from '../../Components/Banner';
 import { Link } from 'react-router-dom';
 
 export default function Profile() {
+    const [photo, setPhoto] = useState(require('../../Imgs/user.png'));
+
     return (
         <div>
             <S.Wrapper>
@@ -13,11 +15,11 @@ export default function Profile() {
                 </div>
                 <S.Container>
 
-                    <img src={require('../../Imgs/user.png')} alt={'Imagem do rosto do Leonardo'} />
+                    <img src={photo} alt={'Imagem do rosto do Leonardo'} />
 
                     <h2>Leonardo Hernandes</h2>
 
-                    <button>Registrar Gastos</button>
+                    <Link to='/registerfinance' className='buttonRegister'>Registrar Gastos</Link>
 
                     <Link to='/signin'>Sair da Conta</Link>
 

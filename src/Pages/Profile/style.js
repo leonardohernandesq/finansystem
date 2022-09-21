@@ -30,13 +30,23 @@ export const Container = styled.section`
         font-weight: normal;
     }
 
-    button{
-        width: 300px;
-        margin-bottom: 20px;
+        .buttonRegister{
+        cursor: pointer;
+
+        padding: 10px 20px;
+        border-radius: 5px;
+        background-color: var(--green);
+        color: var(--light-100);
+
+        transition: all .7s;
+    }
+
+    .buttonRegister:hover{
+        background-color: var(--greenplus);
     }
 
     a{
-        margin-bottom: 50px;
+        margin-bottom: 30px;
     }
 
 

@@ -8,7 +8,7 @@ export default function OffHeader() {
                 <header>
                     <img src={require('../../Imgs/Logo.png')} alt="Logo da empresa composto por uma nota de dolar escrito embaixo o nome da empresa FinanSystem" />
                     <nav>
-                        <Link to='/signin'>Login</Link>
+                        <Link to='/'>Login</Link>
                         <Link to='/register'>Criar uma conta</Link>
                         <Link to='/suporte'>Suporte</Link>
                     </nav>
