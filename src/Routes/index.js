@@ -1,27 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from '../Contexts/auth';
 
-import { BrowserRouter, Route, Routes } from "react-router-dom";
-
-import Header from '../Components/Header'
-import Home from "../Pages/Home";
-import SignIn from '../Pages/SignIn';
-import Register from '../Pages/Register'
-import RegisterFinance from '../Pages/RegisterFinance';
-import Profile from '../Pages/Profile';
-import Suporte from '../Pages/Suporte';
+import AuthRoutes from './auth.routes';
+import AppRoutes from './app.routes';
 
 export default function RoutesApp() {
+    const { user } = useContext(AuthContext)
     return (
-        <BrowserRouter>
-            <Header />
-            <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/register" element={<Register />} />
-                <Route path="/registerfinance" element={<RegisterFinance />} />
-                <Route path="/signin" element={<SignIn />} />
-                <Route path="/profile" element={<Profile />} />
-                <Route path="/suporte" element={<Suporte />} />
-            </Routes>
-        </BrowserRouter>
-    );
+        user === null ? <AppRoutes /> : <AuthRoutes />
+    )
+
 }   

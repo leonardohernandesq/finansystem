@@ -25,7 +25,7 @@ export const Container = styled.section`
         margin-right: 30px;
     }
 
-    nav a:hover:not(:last-child){
+    nav a:hover{
         color: var(--green);
         transition: all .5s;
     }
