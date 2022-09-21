@@ -3,7 +3,7 @@
 # dependencies
 /
 /node_modules
-firebaseConnection.js
+/src/Services/firebaseConnection.js
 /.pnp
 .pnp.js
 
