@@ -1,12 +1,14 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
-import Input from '../../Components/Input';
+import React, { useState, useContext } from 'react';
+import { Link, Navigate } from 'react-router-dom';
+import { AuthContext } from '../../Contexts/auth'
 
+import Input from '../../Components/Input';
 import Banner from '../../Components/Banner';
 
 import * as S from "./style";
 
 export default function Register() {
+    const { SignUp } = useContext(AuthContext)
 
     const [nome, setNome] = useState('')
     const [email, setEmail] = useState('')
@@ -18,8 +20,13 @@ export default function Register() {
         e.preventDefault()
         setLoadingRegister(true)
 
-        setTimeout(() => { setLoadingRegister(false) }, 700)
-
+        if (confirmarSenha === senha) {
+            SignUp(email, senha, nome)
+            return <Navigate to='/' />
+        } else {
+            console.log('Erro ao Criar conta')
+            setLoadingRegister(false)
+        }
     }
 
     return (
@@ -57,7 +64,7 @@ export default function Register() {
                         type="password"
                     />
 
-                    <button type='submit'>
+                    <button type='submit' to='/'>
                         {loadingRegister ? 'Carregando...' : 'Registrar Conta'}
                     </button>
 

@@ -14,6 +14,7 @@ export default function SignIn() {
     const [email, setEmail] = useState('')
     const [senha, setSenha] = useState('')
 
+    // Responsável por chamar a função de login criada no context e passar para ele os dados necessários
     async function handleLogin(e) {
         e.preventDefault()
 

@@ -46,9 +46,47 @@ export const Container = styled.section`
     }
 
     a{
-        margin-bottom: 30px;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }   
+
+    form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
     }
 
+    form input{
+        display: none;
+    }
+
+    .div-photo{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-items: center;
+        transition: all 0.2s;
+    }
+
+    .div-photo:active{
+        opacity: 0.7;
+    }
+
+    .div-photo #plusSpan{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 200px;
+        width: 200px;
+        font-size: 50px;
+        color: var(--green);
+        opacity: 0.6;
+        position: absolute;
+        padding: 0px;
+        margin: 0px;
+    }
 
 
     `
