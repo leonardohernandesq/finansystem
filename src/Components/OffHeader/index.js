@@ -6,7 +6,7 @@ export default function OffHeader() {
         <S.Wrapper>
             <S.Container>
                 <header>
-                    <img src={require('../../Imgs/Logo.png')} alt="Logo da empresa composto por uma nota de dolar escrito embaixo o nome da empresa FinanSystem" />
+                    <Link to='/'><img src={require('../../Imgs/Logo.png')} alt="Logo da empresa composto por uma nota de dolar escrito embaixo o nome da empresa FinanSystem" /></Link>
                     <nav>
                         <Link to='/'>Login</Link>
                         <Link to='/register'>Criar uma conta</Link>

@@ -1,5 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useContext } from 'react';
+import { AuthContext } from '../../Contexts/auth'
 import * as S from './style';
+
+import { db } from '../../Services/firebaseConnection'
+import { collection, addDoc } from 'firebase/firestore'
 
 import Banner from '../../Components/Banner'
 import RadioModelDespesa from '../../Components/RadioModelDespesa';
@@ -7,22 +11,40 @@ import RadioModelLucro from '../../Components/RadioModelLucro';
 
 
 export default function RegisterFinance() {
+    const { user } = useContext(AuthContext)
+
     const [valor, setValor] = useState('');
     const [description, setDescription] = useState('');
     const [status, setStatus] = useState('');
     const [radioCategory, setRadioCategory] = useState('');
 
+
+    // Envia o formulário criando o requerimento
     function handleSubmit(e) {
         e.preventDefault()
 
-
-        console.log(radioCategory)
-        if (status === '') {
-            alert('Selecione um Status Válido')
+        if (status === "" || valor === "" || description === "" || radioCategory === "") {
+            alert('Preencha todos os campos')
         } else {
-            alert('Cadastrado com sucesso!')
+            handleRegisterFinance()
         }
+    }
 
+    // Cadastra uma finança no banco de dados
+    async function handleRegisterFinance() {
+        await addDoc(collection(db, "financas"), {
+            Userid: user.uid,
+            valor: valor,
+            descricao: description,
+            status: status,
+            categoria: radioCategory,
+        })
+            .then(() => {
+                console.log('Cadastrado com Sucesso!')
+            })
+            .catch((error) => {
+                console.log('Ocorreu um erro')
+            })
     }
 
     return (

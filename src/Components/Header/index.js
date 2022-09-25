@@ -1,7 +1,12 @@
+import React, { useContext } from 'react'
+import { AuthContext } from '../../Contexts/auth'
 import { Link } from "react-router-dom";
+
 import * as S from "./style";
 
 export default function Header() {
+    const { SignOut } = useContext(AuthContext)
+
     return (
         <S.Wrapper>
             <S.Container>
@@ -12,9 +17,7 @@ export default function Header() {
                         <Link to='/profile'>Perfil</Link>
                         <Link to='/registerfinance'>Registrar</Link>
                         <Link to='/suporte'>Suporte</Link>
-                        <Link to='/signin'>
-                            <span>Sair</span>
-                        </Link>
+                        <button onClick={() => SignOut()}>Sair</button>
                     </nav>
                 </header>
             </S.Container>

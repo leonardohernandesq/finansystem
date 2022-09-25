@@ -54,7 +54,7 @@ export default function Home() {
 
     ]
 
-
+    // Mostra o valor total para o usuário
     function somarValor() {
         var soma = 1
         for (var i = 0; i < ValueArray.length; i++) {

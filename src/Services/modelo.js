@@ -1,22 +1,23 @@
 // trocar o nome desse arquivo para firebaseConnection.js e preencher os dados abaixo
 
-import { initializeApp } from 'firebase/app';
-import { getFirestore } from 'firebase/firestore/lite'
-import { getAuth } from 'firebase/auth'
+import { initializeApp } from "firebase/app"
+import { getAuth } from "firebase/auth";
+import { getFirestore } from "firebase/firestore";
+import { getStorage } from "firebase/storage";
 
 const firebaseConfig = {
-    apiKey: "*****************************",
-    authDomain: "*****************************",
-    projectId: "*****************************",
-    storageBucket: "*****************************",
-    messagingSenderId: "*****************************",
-    appId: "*****************************",
-    measurementId: "*****************************"
+    apiKey: "************************************",
+    authDomain: "************************************",
+    projectId: "************************************",
+    storageBucket: "************************************",
+    messagingSenderId: "************************************",
+    appId: "************************************",
+    measurementId: "************************************",
 };
 
-const app = initializeApp(firebaseConfig);
+const firebase = initializeApp(firebaseConfig);
+const auth = getAuth(firebase);
+const db = getFirestore(firebase);
+const storage = getStorage(firebase)
 
-const db = getFirestore(app);
-const auth = getAuth(app);
-
-export { db, auth };
+export { db, auth, storage }
