@@ -3,6 +3,9 @@ import { setDoc, doc, getDoc } from "firebase/firestore";
 import React, { useState, createContext } from "react";
 import { db, auth } from '../Services/firebaseConnection';
 
+import { Route } from "react-router-dom";
+
+
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }) {
@@ -29,6 +32,8 @@ function AuthProvider({ children }) {
                 setUser(data)
                 setSigned(true)
                 setLoadingAuth(false)
+
+                Route('/home');
             })
             .catch((error) => {
                 console.log(error + 'Erro ao fazer o Login')
