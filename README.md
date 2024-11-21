@@ -1,7 +1,7 @@
 
 # Finansystem
 
-![Finansystem Screenshot](image-readme.png)
+![Finansystem Screenshot](image-readme-new.png)
 
 ## Overview
 **Finansystem** is a web application for managing personal finances. It allows users to register income and expenses, providing a comprehensive dashboard to visualize financial data. Designed for simplicity and usability, **Finansystem** helps users stay on top of their financial health. 
